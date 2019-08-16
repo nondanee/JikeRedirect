@@ -1,0 +1,19 @@
+{
+  "name": "jike-redirect",
+  "version": "0.0.1",
+  "description": "Redirect Jike API to Jellow API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "pkg": "pkg . --out-path=dist/"
+  },
+  "pkg": {
+    "assets": [
+      "server.key",
+      "server.crt"
+    ]
+  },
+  "author": "nondanee",
+  "license": "MIT",
+  "dependencies": {}
+}
