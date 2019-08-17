@@ -16,15 +16,18 @@
 
 ## Prerequisites
 
-因为即刻有 SSL Pinning，需要 JustTrustMe (Xposed)，然后安装根证书
+因为即刻的 targetSdkVersion 为 26 ([>= 24 不会使用用户添加的 CA 证书](https://stackoverflow.com/a/40743463))，需要使用 JustTrustMe (Xposed)，然后安装根证书
 
 (这次给了 CA 私钥，放心，和 UnblockNeteaseMusic CA 的私钥不一样的)
 
 ## Known Issues
 
 - 如果之前登录了，请退出重登
+
 - 第一次加载动态页可能要很久
+
 - 圈子，广场，推荐，电台，聊天等等都还没回来，等呗！
+
 - ~~因聊天页无法打开 (想 hook 但是不知道返回数据结构长啥样，反编译了但是看不懂 =.=)，查看通知请长按~~ 蠢了，`content-length` 没去掉
 
 ## License
