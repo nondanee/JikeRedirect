@@ -16,7 +16,7 @@
 
 ## Prerequisites
 
-因为即刻的 targetSdkVersion 为 26 ([>= 24 不会使用用户添加的 CA 证书](https://stackoverflow.com/a/40743463))，需要使用 JustTrustMe (Xposed)，然后安装根证书
+因为即刻的 targetSdkVersion 为 26 ([>= 24 不会使用用户添加的 CA 证书](https://stackoverflow.com/a/40743463))，需要 JustTrustMe (Xposed)，然后安装根证书
 
 (这次给了 CA 私钥，放心，和 UnblockNeteaseMusic CA 的私钥不一样的)
 
