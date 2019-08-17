@@ -52,11 +52,12 @@ hook.request.after = ctx => {
 		return request.read(proxyRes)
 		.then(body => proxyRes.body = body)
 		.then(body => {
-			// if(proxyRes.statusCode == 503){
-			// 	proxyRes.statusCode = 200
-			// 	proxyRes.body = JSON.stringify({data: [], loadMoreKey: null})
-			// 	proxyRes.headers['content-type'] = 'application/json'
-			// }
+			if(proxyRes.statusCode == 503){
+				proxyRes.statusCode = 200
+				proxyRes.body = JSON.stringify({})
+				proxyRes.headers['content-type'] = 'application/json'
+				if('content-length' in proxyRes.headers) delete proxyRes.headers['content-length']
+			}
 		})
 	}
 }
