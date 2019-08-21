@@ -41,8 +41,10 @@ hook.request.before = ctx => {
 		req.headers['host'] = host
 		req.url = format(Object.assign(url, {host}))
 		ctx.jike = {path: url.pathname}
+		if(url.pathname == '/1.0/topics/tabs/square/feed'){
+			req.url = parse(url).resolve('/1.0/topicFeed/list')
+		}
 	}
-	// console.log(req.url)
 }
 
 hook.request.after = ctx => {
@@ -52,7 +54,7 @@ hook.request.after = ctx => {
 		return request.read(proxyRes)
 		.then(body => proxyRes.body = body)
 		.then(body => {
-			if(proxyRes.statusCode == 503){
+			if(proxyRes.statusCode == 503 && jike.path == '/1.0/interactiveMessages/list'){
 				proxyRes.statusCode = 200
 				proxyRes.body = JSON.stringify({})
 				proxyRes.headers['content-type'] = 'application/json'

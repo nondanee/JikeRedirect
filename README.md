@@ -10,6 +10,8 @@
 
 框架来自 *UnblockNeteaseMusic*
 
+因引导页资源打包问题导致无法进入 APP，但 `localhost:48030` 请求不走代理因此无法通过代理解决，故放弃本项目
+
 ## Preview
 
 <img src="https://user-images.githubusercontent.com/26399680/63162256-a33d4c00-c054-11e9-95e4-dd216ec8b8a6.jpg" width="50%"/><img src="https://user-images.githubusercontent.com/26399680/63162257-a3d5e280-c054-11e9-90bc-0f4bc3c2e1bd.jpg" width="50%"/>
